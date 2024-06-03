@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --violet: hsl(257, 40%, 49%);
+    --soft-magenta: hsl(300, 69%, 71%);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    min-height: 100svh;
+    margin: 0;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    overflow-x: hidden;
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+    background-color: var(--violet);
+}
+
+body>* {
+    grid-column: 2 / -2;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 1332px;
+    margin: 0 auto;
+}
+
+.title {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.main {
+    padding-inline: 36px;
+}
+
+/* header */
+.page-header {
+    padding: 32px 36px;
+}
+
+.home-link img {
+    width: 128px;
+}
+
+/* hero */
+.hero {
+    padding-block: 27px 13px;
+    display: grid;
+    align-items: center;
+    height: 100%;
+}
+
+h1.title {
+    margin: 0 0 12px;
+    font-size: 24px;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.hero__descr {
+    margin: 0 0 24px;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.button {
+    display: block;
+    width: 200px;
+    margin: 0 auto;
+    padding: 12px 24px;
+    font-size: 13px;
+    color: var(--violet);
+    text-align: center;
+    text-decoration: none;
+    align-self: center;
+    background-color: white;
+    border-radius: 40px;
+    transition: .3s ease-in-out;
+}
+
+@media (hover: hover) {
+    .button:where(:hover, :focus-visible) {
+        background-color: var(--soft-magenta);
+        box-shadow: 0 5px 10px rgba(0 0 0 / .7);
+        color: white;
+    }
+}
+
+.button:active {
+    background-color: var(--soft-magenta);
+    box-shadow: 0 3px 7px rgba(0 0 0 / .7);
+    color: white;
+}
+/* footer */
+.page-footer {
+    padding: 50px 36px;
+    display: flex;
+    justify-content: center;
+}
+.social-list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    gap: 10px;
+}
+
+.social-list__link {
+    display: grid;
+    place-items: center;
+    text-decoration: none;
+    border: 1px solid white;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    overflow: hidden;
+    outline: none;
+    transition: border-color .3s ease-in-out;
+}
+
+.social-list__link>svg {
+    width: 14px;
+    fill: white;
+    transition: fill .3s ease-in-out;
+}
+
+.social-list__link.facebook>svg {
+    width: 10px;
+}
+
+@media (hover: hover) {
+    .social-list__link:where(:hover, :focus-visible) {
+        border-color: var(--soft-magenta);
+    }
+    .social-list__link:where(:hover, :focus-visible)>svg {
+        fill: var(--soft-magenta);
+    }
+}
+
+.social-list__link:active>svg {
+    fill: var(--soft-magenta);
+}
+
+@media (min-width: 760px) {
+    .hero {
+        grid-template-columns: 4fr 3fr;
+        gap: 50px;
+    }
+
+    h1.title, 
+    .hero__descr {
+        text-align: left;
+    }
+
+    .button {
+        margin: 0;
+    }
+
+    .page-footer {
+        justify-content: end;
+    }
+}
+
+@media (min-width: 1000px) {
+    .page-header {
+        padding: 54px 16px 75px;
+    }
+    .home-link>img {
+        width: 215px;
+    }
+
+    .hero {
+        padding: 12px 16px 0;
+    }
+
+    .hero__content {
+        align-self: start;
+        padding-top: 42px;
+    }
+    h1.title {
+        margin-bottom: 19px;
+        font-size: 40px;
+    }
+    .hero__descr {
+        margin-bottom: 26px;
+        font-size: 18px;
+    }
+
+    .hero .button {
+        font-size: 20px;
+    }
+
+    .page-footer {
+        padding: 0 26px 45px;
+    }
+
+    .social-list {
+        gap: 16px;
+    }
+    
+    .social-list__link {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .social-list__link>svg {
+        width: 16px;
+    }
+    
+    .social-list__link.facebook>svg {
+        width: 11px;
+    }
+}
