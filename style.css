@@ -179,7 +179,7 @@ h1.title {
 @media (min-width: 760px) {
     body {
         background-image: url(./images/bg-desktop.svg);
-        background-size: 1318px 800px;
+        background-size: cover;
 
     }
     .hero {
