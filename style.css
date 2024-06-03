@@ -24,6 +24,9 @@ body {
     font-style: normal;
     color: white;
     background-color: var(--violet);
+    background-image: url(./images/bg-mobile.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
 
 body>* {
@@ -174,6 +177,11 @@ h1.title {
 }
 
 @media (min-width: 760px) {
+    body {
+        background-image: url(./images/bg-desktop.svg);
+        background-size: 1318px 800px;
+
+    }
     .hero {
         grid-template-columns: 4fr 3fr;
         gap: 50px;
